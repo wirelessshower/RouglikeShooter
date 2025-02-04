@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b26f723c94f6d25469350818c6f8363f
+guid: 991f96474323ae8458c8be7cf90d6308
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -552501770622914575
-    second: sprites_0009_Body_0
+      213: 418810292542302525
+    second: GeernJoystick_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0009_Body_0
+      name: GeernJoystick_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 164
-        height: 176
+        width: 331
+        height: 331
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ff2f30219e1558f0800000000000000
-      internalID: -552501770622914575
+      spriteID: d39e24bfdb9efc500800000000000000
+      internalID: 418810292542302525
       vertices: []
       indices: 
       edges: []

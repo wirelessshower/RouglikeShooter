@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 048025ec54614ba458bae45d5b7c82d2
+guid: 78ee52c046923d24f9b595e8cc4a9f4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4250297125320556945
-    second: sprites_0011_Foot_0
+      213: -5945702497121665590
+    second: RedHead_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0011_Foot_0
+      name: RedHead_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 42
-        height: 92
+        width: 491
+        height: 759
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6e77679849e305c0800000000000000
-      internalID: -4250297125320556945
+      spriteID: acdf8ee941f9c7da0800000000000000
+      internalID: -5945702497121665590
       vertices: []
       indices: 
       edges: []

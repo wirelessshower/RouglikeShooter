@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 76fd5206bdd257c4fb0431b2af0bcbe0
+guid: abe8b9c0d9901104d8a86745fb156ef3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1338853356492359642
-    second: sprites_0008_Green-Bullet_0
+      213: 7748683139586897197
+    second: GreenSword_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0008_Green-Bullet_0
+      name: GreenSword_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 144
-        height: 136
+        width: 123
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 628feef37ff6b6de0800000000000000
-      internalID: -1338853356492359642
+      spriteID: d25b22cd24ad88b60800000000000000
+      internalID: 7748683139586897197
       vertices: []
       indices: 
       edges: []

@@ -11,13 +11,20 @@ public class Player : MonoBehaviour
         Android
     }
     
-
+    private Animator animator;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
+    private bool facingRight = true;
+
+    const string IS_RUNNING = "IsRunning";
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+        if (controlType == ControlType.PC)
+            joystick.gameObject.SetActive(false);
     }
 
     private void Update() {
@@ -27,10 +34,32 @@ public class Player : MonoBehaviour
         moveInput = new Vector2(joystick.Horizontal, joystick.Vertical);
 
         moveVelocity = moveInput.normalized * speed;
+
+        if (moveInput.x == 0)
+            animator.SetBool(IS_RUNNING, false);
+        else 
+            animator.SetBool(IS_RUNNING, true);
+
+        HandleFlipping();
     }
 
     private void FixedUpdate() {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 
+    private void HandleFlipping() {
+        if (moveInput.x > 0 && !facingRight) {
+            Flip();
+        } else if (moveInput.x < 0 && facingRight) {
+            Flip();
+        }
+    }
+
+
+    private void Flip() {
+        facingRight = !facingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
 }

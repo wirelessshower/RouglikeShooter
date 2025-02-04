@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 510f9b935c417084eb385b8a947bbf18
+guid: 1be64e7ef18a82249ba8571b60d4d7aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8063242388740269385
-    second: sprites_0005_Sword_0
+      213: 4018814452851649147
+    second: Foot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0005_Sword_0
+      name: Foot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 123
-        height: 225
+        width: 210
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ba9341b4cb991090800000000000000
-      internalID: -8063242388740269385
+      spriteID: b7aad68c372b5c730800000000000000
+      internalID: 4018814452851649147
       vertices: []
       indices: 
       edges: []

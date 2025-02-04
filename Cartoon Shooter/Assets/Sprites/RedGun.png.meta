@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c223a2ff812fb7f43b7d58f4791b4b87
+guid: 6253e8e8c003d9142a542820f2c39a2c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5743337199759902887
-    second: sprites_0003_Green-Head_0
+      213: -6052227083387198902
+    second: RedGun_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0003_Green-Head_0
+      name: RedGun_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 329
-        height: 363
+        width: 134
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a8c9f0f0ce64bf40800000000000000
-      internalID: 5743337199759902887
+      spriteID: a4225b2a88b220ca0800000000000000
+      internalID: -6052227083387198902
       vertices: []
       indices: 
       edges: []

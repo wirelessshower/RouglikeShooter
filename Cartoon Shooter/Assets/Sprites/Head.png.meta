@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6cf199a813e71ef43a2d32cf52c4e35d
+guid: 53846d20c586fc1468fd82c1557f9838
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5549286898908984856
-    second: sprites_0007_Red-Bullet_0
+      213: -5156993582514690110
+    second: Head_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0007_Red-Bullet_0
+      name: Head_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 144
-        height: 136
+        width: 767
+        height: 854
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 816f23e7807030d40800000000000000
-      internalID: 5549286898908984856
+      spriteID: 2c72e3dd8adae68b0800000000000000
+      internalID: -5156993582514690110
       vertices: []
       indices: 
       edges: []

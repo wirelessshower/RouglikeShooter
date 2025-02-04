@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4bd0ad266ec521f439c48269e8a3f7c3
+guid: 75e6c8961e1ef0c40a8a0270b8bd08b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1113731739407965758
-    second: sprites_0000_Rad-Hed_0
+      213: 6546927742534835930
+    second: GreenBullet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_0000_Rad-Hed_0
+      name: GreenBullet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 329
-        height: 396
+        width: 166
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3e5d7ebd15c47f00800000000000000
-      internalID: 1113731739407965758
+      spriteID: ade50ff381c5bda50800000000000000
+      internalID: 6546927742534835930
       vertices: []
       indices: 
       edges: []
