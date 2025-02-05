@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Joystick joystick;
-    [SerializeField] private ControlType controlType;
-
     enum ControlType{
         PC,
         Android
     }
+
+    [SerializeField] private float speed;
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private ControlType controlType;
+    [SerializeField] private int health; 
+
     
     private Animator animator;
     private Rigidbody2D rb;
@@ -61,5 +63,9 @@ public class Player : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+    public void ChengeHelth(int helthValue) {
+        health += helthValue;
     }
 }
