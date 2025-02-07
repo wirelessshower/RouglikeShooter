@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private LayerMask whatIsSolid;
 
     [SerializeField] private GameObject bulletEffect;
+    [SerializeField] private bool EnemyBulett;
 
     private void Start() {
         Invoke("DestroyBullet", lifetime);
@@ -20,13 +21,16 @@ public class Bullet : MonoBehaviour {
             if (hitInfo.collider.CompareTag("Enemy")) {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
-            Instantiate(bulletEffect, transform.position, Quaternion.identity);
+            if (hitInfo.collider.CompareTag("Player") && EnemyBulett) {
+                hitInfo.collider.GetComponent<Player>().ChengeHelth(-damage);
+            }
             DestroyBullet();
         }
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
     public void DestroyBullet() {
+        Instantiate(bulletEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);   
     }
 }

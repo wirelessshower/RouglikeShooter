@@ -1,17 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    enum ControlType{
+    public enum ControlType{
         PC,
         Android
     }
 
     [SerializeField] private float speed;
     [SerializeField] private Joystick joystick;
-    [SerializeField] private ControlType controlType;
     [SerializeField] private int health; 
 
+    public ControlType controlType;
     
     private Animator animator;
     private Rigidbody2D rb;
@@ -43,6 +44,10 @@ public class Player : MonoBehaviour
             animator.SetBool(IS_RUNNING, true);
 
         HandleFlipping();
+
+        if (health <= 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void FixedUpdate() {
