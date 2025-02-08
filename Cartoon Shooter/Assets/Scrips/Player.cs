@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -7,12 +8,21 @@ public class Player : MonoBehaviour
         PC,
         Android
     }
-
-    [SerializeField] private float speed;
+    [Header("Controls")]
     [SerializeField] private Joystick joystick;
-    [SerializeField] private int health; 
-
+    [SerializeField] private float speed;
     public ControlType controlType;
+
+    [Header("Helth")]
+    [SerializeField] private int health;
+    [SerializeField] private TextMeshProUGUI helthDisplay;
+    [SerializeField] private GameObject potionEffect;
+
+    [Header("Shield")]
+    public GameObject shield;
+    public Shield shieldTimer;
+    [SerializeField] private GameObject shieldEffect;
+ 
     
     private Animator animator;
     private Rigidbody2D rb;
@@ -23,6 +33,8 @@ public class Player : MonoBehaviour
     const string IS_RUNNING = "IsRunning";
 
     private void Start() {
+        shield.SetActive(false);
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -50,6 +62,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Potion")) {
+            ChengeHelth(5);
+            Instantiate(potionEffect, collision.transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
+        }else if (collision.CompareTag("Shield")) {
+            if (!shield.activeInHierarchy) {
+                shield.SetActive(true);
+                Instantiate(shieldEffect, collision.transform.position, Quaternion.identity);
+                shieldTimer.gameObject.SetActive(true);
+                shieldTimer.isCoolDown = true;
+                Destroy(collision.gameObject);
+            } else { shieldTimer.ResetTimer();  Destroy(collision.gameObject); }
+
+        }
+    }
+
     private void FixedUpdate() {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
@@ -71,6 +100,11 @@ public class Player : MonoBehaviour
     }
 
     public void ChengeHelth(int helthValue) {
-        health += helthValue;
+        if (!shield.activeInHierarchy || shield.activeInHierarchy && helthValue > 0) {
+            health += helthValue;
+            helthDisplay.text = $"HP:{health}";
+        } else if (shield.activeInHierarchy && helthValue < 0) {
+            shieldTimer.ReduceTime(helthValue);
+        }
     }
 }
