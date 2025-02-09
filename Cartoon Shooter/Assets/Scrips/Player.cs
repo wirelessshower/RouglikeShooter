@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -22,7 +24,11 @@ public class Player : MonoBehaviour
     public GameObject shield;
     public Shield shieldTimer;
     [SerializeField] private GameObject shieldEffect;
- 
+
+    [Header("Weapon")]
+    public List<GameObject> unlockedWeapons;
+    public GameObject[] allWeapons;
+    public Image weaponIcon;
     
     private Animator animator;
     private Rigidbody2D rb;
@@ -60,6 +66,9 @@ public class Player : MonoBehaviour
         if (health <= 0) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            SwitchWeapon();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -74,8 +83,18 @@ public class Player : MonoBehaviour
                 shieldTimer.gameObject.SetActive(true);
                 shieldTimer.isCoolDown = true;
                 Destroy(collision.gameObject);
-            } else { shieldTimer.ResetTimer();  Destroy(collision.gameObject); }
-
+            } else {
+                shieldTimer.ResetTimer(); 
+                Instantiate(shieldEffect, collision.transform.position, Quaternion.identity);
+                Destroy(collision.gameObject); }
+        } else if(collision.CompareTag("Weapon")) {
+            for (int i = 0; i < allWeapons.Length; i++) {
+                if (collision.name == allWeapons[i].name) {
+                    unlockedWeapons.Add(allWeapons[i]);
+                }
+            }
+            SwitchWeapon();
+            Destroy(collision.gameObject);
         }
     }
 
@@ -105,6 +124,22 @@ public class Player : MonoBehaviour
             helthDisplay.text = $"HP:{health}";
         } else if (shield.activeInHierarchy && helthValue < 0) {
             shieldTimer.ReduceTime(helthValue);
+        }
+    }
+
+    public void SwitchWeapon() {
+        for (int i = 0; i < unlockedWeapons.Count; i++) {
+            if (unlockedWeapons[i].activeInHierarchy) {
+                unlockedWeapons[i].SetActive(false);
+                if (i != 0) {
+                    unlockedWeapons[i - 1].SetActive(true);
+                    weaponIcon.sprite = unlockedWeapons[i - 1].GetComponent<SpriteRenderer>().sprite;
+                } else {
+                    unlockedWeapons[unlockedWeapons.Count - 1].SetActive(true);
+                    weaponIcon.sprite = unlockedWeapons[unlockedWeapons.Count - 1].GetComponent<SpriteRenderer>().sprite;
+                }                
+                break;
+            }
         }
     }
 }

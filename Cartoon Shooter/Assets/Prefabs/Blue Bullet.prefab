@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6652777089290577406}
   - component: {fileID: 8316481562777923570}
   m_Layer: 0
-  m_Name: Green Bullet
+  m_Name: Blue Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.163, y: 0.56, z: 0}
-  m_LocalScale: {x: 0.23556365, y: 0.23556365, z: 0.23556365}
+  m_LocalScale: {x: 0.123172216, y: 0.123172216, z: 0.123172216}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 6546927742534835930, guid: 75e6c8961e1ef0c40a8a0270b8bd08b0, type: 3}
+  m_Sprite: {fileID: -6338813605764342637, guid: b1e01ea7d44f9b54b8571c907ab7274a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,9 +103,9 @@ MonoBehaviour:
   speed: 20
   lifetime: 2
   distance: 0
-  damage: 3
+  damage: 1
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 8
-  bulletEffect: {fileID: 4847664367051364061, guid: 75977161d81ef22418386991106a9a33, type: 3}
+  bulletEffect: {fileID: 4847664367051364061, guid: cbe4c8b4318887d4fbddef230d0634c8, type: 3}
   EnemyBulett: 0
