@@ -8,6 +8,10 @@ TagManager:
   - Potion
   - Shield
   - Weapon
+  - Block
+  - Wall
+  - RoomPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - UI
   - Solid
   - Player
-  - 
+  - Ground
   - 
   - 
   - 

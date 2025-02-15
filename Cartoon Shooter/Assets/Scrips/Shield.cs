@@ -8,20 +8,20 @@ public class Shield : MonoBehaviour
 
     public bool isCoolDown;
 
-    private Image shiedlImage;
+    private Image shieldImage;
     private Player player;
 
     private void Start() {
-        shiedlImage = GetComponent<Image>();
+        shieldImage = GetComponent<Image>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         isCoolDown = true;
     }
 
     private void Update() {
         if (isCoolDown) { 
-            shiedlImage.fillAmount -= 1 / cooldown * Time.deltaTime;
-            if (shiedlImage.fillAmount <= 0) {
-                shiedlImage.fillAmount = 1;
+            shieldImage.fillAmount -= 1 / cooldown * Time.deltaTime;
+            if (shieldImage.fillAmount <= 0) {
+                shieldImage.fillAmount = 1;
                 isCoolDown=false;
                 player.shield.SetActive(false);
                 gameObject.SetActive(false);
@@ -30,10 +30,10 @@ public class Shield : MonoBehaviour
     }
 
     public void ResetTimer() {
-        shiedlImage.fillAmount = 1;
+        shieldImage.fillAmount = 1;
     }
 
     public void ReduceTime(int damage) { 
-        shiedlImage.fillAmount += damage / 5f;
+        shieldImage.fillAmount += damage / 5f;
     }
 }
